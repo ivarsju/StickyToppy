@@ -11,11 +11,18 @@ Usage:
 3. Initialize:
 
   StickyToppy.init('selector');
-
+  
   or set some higher z-index:
   
   StickyToppy.init('selector', 1000);
-
+  
   and some offset from top:
   
   StickyToppy.init('selector', 1000, 10);
+
+Example:
+===========
+
+    $(document).ready(function() {
+      StickyToppy.init('#header', 1000);
+    }
