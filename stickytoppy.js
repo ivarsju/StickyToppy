@@ -1,3 +1,6 @@
+/*! Copyright (c) 2013 Ivars Jukāms - https://github.com/ivarsju/StickyToppy/
+    MIT license: https://github.com/ivarsju/StickyToppy/blob/master/license.txt */
+
 var StickyToppy = function() {
     
     var $_header    = null;
