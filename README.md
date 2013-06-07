@@ -4,6 +4,7 @@ StickyToppy
 Make your page header or other block element visible at the top of the page while scrolling page down
 
 Usage:
+===========
 
 Download the source
 Include it in your project
