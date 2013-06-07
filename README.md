@@ -37,3 +37,4 @@ Browser Support (tested):
 - Chrome 25
 - Opera 12
 - Safari 5
+- IE 8
