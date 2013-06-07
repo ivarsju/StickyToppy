@@ -30,3 +30,10 @@ Example:
 Requirements:
 ===========
 jQuery 1.7
+
+Browser Support (tested):
+===========
+- Firefox 21
+- Chrome 25
+- Opera 12
+- Safari 5
