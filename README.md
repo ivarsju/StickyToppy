@@ -6,16 +6,16 @@ Make your page header or other block element visible at the top of the page whil
 Usage:
 ===========
 
-Download the source
-Include it in your project
-Initialize:
+1. Download the source
+2. Include it in your project
+3. Initialize:
 
-StickyToppy.init('selector');
+  StickyToppy.init('selector');
 
-or set some higher z-index:
+  or set some higher z-index:
+  
+  StickyToppy.init('selector', 1000);
 
-StickyToppy.init('selector', 1000);
-
-and some offset from top:
-
-StickyToppy.init('selector', 1000, 10);
+  and some offset from top:
+  
+  StickyToppy.init('selector', 1000, 10);
