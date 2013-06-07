@@ -29,7 +29,7 @@ Example:
 
 Requirements:
 ===========
-jQuery 1.7
+jQuery 1.7+
 
 Browser Support (tested):
 ===========
