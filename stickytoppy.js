@@ -7,7 +7,7 @@ var StickyToppy = function() {
     var $_headerTop = null;
     var $_topOffset = 0;
     
-    function init(selector, zIndex, offset) {
+    function init(selector, zIndex, offset, keepSpace) {
         
         $_header = $(selector);
         
@@ -31,6 +31,15 @@ var StickyToppy = function() {
             $_topOffset = offset;
         }
         
+        //add "wrapper" to fill space earlier used by header
+        if (keepSpace) {
+            $_header.wrap('<div id="sticky-wrapper" />');
+            _spaceRecalculate();
+            if (jQuery.isFunction($.subscribe)) {
+                $.subscribe('StickyToppy.spaceRecalculate', _spaceRecalculate);
+            }
+        }
+        
         //make it "sticky" if you first scroll the page and then refresh
         _sticky();
         
@@ -44,11 +53,22 @@ var StickyToppy = function() {
         if ($(window).scrollTop() > $_headerTop) {
             //set it fixed at the top of the window
             $_header.css({'position': 'fixed', 'top': $_topOffset});
+            if (jQuery.isFunction($.publish)) {
+                $.publish('StickyToppy.fixed');
+            }
         } else {
             //set back default position
             $_header.css({'position': 'static'});
+            if (jQuery.isFunction($.publish)) {
+                $.publish('StickyToppy.static');
+            }
         }
         
+    }
+    
+    function _spaceRecalculate() {
+        var height = $_header.height();
+        $('#sticky-wrapper').css({'min-height': height});
     }
     
     return {
