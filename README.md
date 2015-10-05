@@ -25,7 +25,7 @@ Example:
 
     $(document).ready(function() {
       StickyToppy.init('#header', 1000);
-    }
+    })
 
 Requirements:
 ===========
