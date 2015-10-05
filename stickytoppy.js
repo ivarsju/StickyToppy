@@ -3,9 +3,10 @@
 
 var StickyToppy = function() {
     
-    var $_header    = null;
-    var $_headerTop = null;
-    var $_topOffset = 0;
+    var $_header     = null;
+    var $_headerTop  = null;
+    var $_topOffset  = 0;
+    var $_leftOffset = 0;
     
     function init(selector, zIndex, offset, keepSpace) {
         
@@ -15,7 +16,8 @@ var StickyToppy = function() {
             return;
         }
         
-        $_headerTop = $_header.offset().top;
+        $_headerTop  = $_header.offset().top;
+        $_leftOffset = $_header.offset().left;
         
         //get and set element's width, in case it is not already done in css
         var width = $_header.width();
@@ -52,7 +54,8 @@ var StickyToppy = function() {
         
         if ($(window).scrollTop() > $_headerTop) {
             //set it fixed at the top of the window
-            $_header.css({'position': 'fixed', 'top': $_topOffset});
+            var left = $_leftOffset - $(window).scrollLeft();
+            $_header.css({'position': 'fixed', 'top': $_topOffset, 'left': left});
             if (jQuery.isFunction($.publish)) {
                 $.publish('StickyToppy.fixed');
             }
